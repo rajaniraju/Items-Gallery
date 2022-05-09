@@ -52,11 +52,9 @@ async function getImage() {
 function getMarkup() {
     let itemDisplayMarkup = currentItems.map((item) => {
         return (`<div class="mix col-sm-3 page1 page4 margin30">
-    <button id="modal" data-bs-toggle="modal" data-bs-target="#imagemodal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}')">
+    <button id="modal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}')">
     <div class="item-img-wrap ">
-        <img src="${item.imageUrl}" height="250" class="img-responsive" alt="workimg">
-        <div class="item-img-overlay">
-        </div>
+        <img src="${item.imageUrl}" height="250">
     </div> 
     </button>
     </div>`)
@@ -69,4 +67,10 @@ function onImageClicked(url,imageType, imageSubType, imageSize) {
     console.log(url);
     console.log(imageType);
     console.log(imageSubType);
+    let img = document.getElementById("img-current");
+    img.src = url;
+
+    const options = {};
+    var myModal = new bootstrap.Modal(document.getElementById('imagemodal'), options);
+    myModal.show();
 }
