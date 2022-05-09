@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list of Image</title>
+    <script src="items.js"></script>
+    <link rel="stylesheet" href="./items.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body onload="getImage()">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Items</a>
+            
+        </div>
+      </nav>
+    <hr>
+    <div class="col-md-8 offset-md-2">
+    <div class="select">
+        <div class="col-md-8 offset-md-2">
+            <div class="container-">
+            <div class="dropdown">
+            <select title="dropdown"id="selection" class="form-select" id="sel1" name="sellist1">
+                <option >Cat</option>
+            </select>
+        </div> 
+          </div>
+    </div>
+</div>
+    <hr>
+    <div id="container" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="grid" class="row">
+                    <div class="mix col-sm-3 page1 page4 margin30">
+                        <div class="item-img-wrap ">
+                            <img src="./Images/Images/Animals/Dogs/pexels-photo-1750378.jpeg"height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="Dogs" href="./Images/Images/Animals/Dogs/00fab73a14aedf248fa7811dc6413675.jpg" class="show-image">
+                                    <span class="close">&times;></span>
+                                    <p>Some text in the Modal..</p>
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="mix col-sm-3 page2 page3 margin30">
+                        <div class="item-img-wrap ">
+                            <img src="./Images/Images/Animals/Dogs/anxiety-dog.jpeg" height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="anxiety" href="./Images/Images/Animals/Dogs/anxiety-dog.jpeg" class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+                    <div class="mix col-sm-3  page3 page2 margin30 ">
+                        <div class="item-img-wrap ">
+                            <img src="./Images/Images/Animals/Dogs/istockphoto-1284692003-170667a.jpg" height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="Dogs" href="./Images/Images/Animals/Dogs/istockphoto-1284692003-170667a.jpg" class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+                    <div class="mix col-sm-3  page4 margin30">
+                        <div class="item-img-wrap ">
+                            <img src="./Images//Images/Animals/Dogs/istockphoto-1288134194-170667a.jpg"height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="Dogs" href="./Images//Images/Animals/Dogs/istockphoto-1288134194-170667a.jpg" class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+                    <div class="mix col-sm-3 page1 margin30 ">
+                        <div class="item-img-wrap ">
+                            <img src="./Images/Images/Animals/Dogs/istockphoto-185094249-612x612.jpg" height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="Dogs"href="./Images/Images/Animals/Dogs/istockphoto-185094249-612x612.jpg" class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+                    <div class="mix col-sm-3  page2 margin30">
+                        <div class="item-img-wrap ">
+                            <img src="./Images//Images/Animals/Dogs/little-dog-puppy-hands-summer-180229500.jpg" height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="Dogs"href="./Images//Images/Animals/Dogs/little-dog-puppy-hands-summer-180229500.jpg" class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+                    <div class="mix col-sm-3  page3 margin30">
+                        <div class="item-img-wrap ">
+                            <img src="./Images//Images/Animals/Dogs/pexels-photo-1750378.jpeg" height="250" class="img-responsive" alt="workimg">
+                            <div class="item-img-overlay">
+                                <a title="Dogs" href="./Images//Images/Animals/Dogs/pexels-photo-1750378.jpeg" class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+    
+                    </div>
+                                                                 
+                </div><!--grid-->
+            </div>
+        </div>
+        <div class="row gallery-bottom">
+            <div class="col-sm-6">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6 text-right">
+                <em>Displaying 1 to 7 (of 50 posts)</em>
+                <button onclick="getImage()">getImage</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
