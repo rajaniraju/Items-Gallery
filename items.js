@@ -48,11 +48,11 @@ async function getImage() {
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
 
 }
-
+//to display the html contents
 function getMarkup() {
     let itemDisplayMarkup = currentItems.map((item) => {
         return (`<div class="mix col-sm-3 page1 page4 margin30">
-    <button id="modal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}','${item.filename}','${item.filepath}','${item.imageSize}','${item.dimension}')">
+    <button id="modal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}','${item.filename}','${item.filepath}','${item.imageSize}')">
     <div class="item-img-wrap ">
         <img src="${item.imageUrl}" height="250">
     </div> 
@@ -62,8 +62,8 @@ function getMarkup() {
 
     return itemDisplayMarkup;
 }
-
-function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize,imagedimension) { 
+//to display the model when image is clicked
+function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize) { 
     console.log(url);
     console.log(imageType);
     console.log(imageSubType);
@@ -76,7 +76,7 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
     let filePath= document.getElementById("img-filepath");
     let imagetype= document.getElementById("img-type");
     let imagesubtype= document.getElementById("img-subtype");
-    let imageDimension=document.getElementById("img-dimensions");
+    //let imageDimension=document.getElementById("img-dimensions");
     let imagesize = document.getElementById("img-size");
     fileName.innerHTML = `${filename}`;
     filePath.innerHTML = `${filepath}`;
