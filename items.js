@@ -11,6 +11,7 @@ function getValue() {
      //put the selected items in new array.
     currentItems = items.filter(item => item.imageSubType === selectedItem);
     console.log(currentItems);
+    
   
     
 }
@@ -57,6 +58,3 @@ async function getImage() {
          
 }
 
-function gettingSubtypeInSelection() {
-    
-}
