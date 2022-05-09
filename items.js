@@ -1,9 +1,19 @@
 let items;
-let selectedItems;
+let selectedItem;
 let url = './items.json';
- 
+let currentItems = [];
 let subType = [];
 let uniqueSubtypes = [];
+//getting the currently selected item.
+function getValue() {
+    selectedItem = document.getElementById("selection").value;
+    console.log(selectedItem);
+     //put the selected items in new array.
+    currentItems = items.filter(item => item.imageSubType === selectedItem);
+    console.log(currentItems);
+  
+    
+}
 
 async function getImage() {
     let response = await fetch(url);
@@ -20,17 +30,19 @@ async function getImage() {
 
 
     //getting uniqueSubtype in selection dropdown.
-  let selectionDisplay = uniqueSubtypes.map((subtype)=>{return(` 
-  <option id="selected">${subtype}</option>
- `)})
+    let selectionDisplay = uniqueSubtypes.map((subtype)=>{return(` 
+    <option>${subtype}</option>
+    `)})
     document.getElementById("selection").innerHTML = selectionDisplay;
     
+   
+   
     
-    //getting the currently selected item.
 
 
     //displaying images accordingly 
-    let itemDisplay = items.map((item)=>{return(`<div class="mix col-sm-3 page1 page4 margin30">
+     itemSelected = getValue();
+    let itemDisplay = currentItems.map((item)=>{return(`<div class="mix col-sm-3 page1 page4 margin30">
     <div class="item-img-wrap ">
         <img src="${item.imageUrl}" height="250" class="img-responsive" alt="workimg">
         <div class="item-img-overlay">
