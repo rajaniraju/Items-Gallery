@@ -25,6 +25,7 @@ async function getImage() {
  `)})
     document.getElementById("selection").innerHTML = selectionDisplay;
     
+    
     //getting the currently selected item.
 
 
