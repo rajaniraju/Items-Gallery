@@ -4,15 +4,29 @@ let url = './items.json';
 let currentItems = [];
 let subType = [];
 let uniqueSubtypes = [];
-//getting the currently selected item.
 function getValue() {
+    //getting the currently selected item.
     selectedItem = document.getElementById("selection").value;
     console.log(selectedItem);
-     //put the selected items in new array.
+    //put the selected items in new array.
     currentItems = items.filter(item => item.imageSubType === selectedItem);
     console.log(currentItems);
-    
-  
+}
+function changeImages() {
+//getting the currently selected item.And change images accordingly.
+    itemSelected = getValue();
+    let itemDisplay = currentItems.map((item)=>{return(`<div class="mix col-sm-3 page1 page4 margin30">
+    <div class="item-img-wrap ">
+        <img src="${item.imageUrl}" height="250" class="img-responsive" alt="workimg">
+        <div class="item-img-overlay">
+            <a title="Dogs" href="${item.imageUrl}" class="show-image">
+                <span class="close">&times;></span>
+                <p>Some text in the Modal..</p>
+            </a>
+        </div>
+    </div> 
+</div>`)});
+    document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplay}</div>`;
     
 }
 
