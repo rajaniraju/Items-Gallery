@@ -6,7 +6,9 @@
 .margin30 {
     margin-bottom: 30px;
 }
-
+#modal{
+    border:none;
+}
 .item-img-wrap {
     position: relative;
     text-align: center;

@@ -57,7 +57,9 @@ async function getImage() {
 
     //displaying images accordingly 
      itemSelected = getValue();
-    let itemDisplay = currentItems.map((item)=>{return(`<div class="mix col-sm-3 page1 page4 margin30">
+    let itemDisplay = currentItems.map((item) => {
+        return (`<div class="mix col-sm-3 page1 page4 margin30">
+    <button id="modal">
     <div class="item-img-wrap ">
         <img src="${item.imageUrl}" height="250" class="img-responsive" alt="workimg">
         <div class="item-img-overlay">
@@ -67,6 +69,7 @@ async function getImage() {
             </a>
         </div>
     </div> 
+    </button>
 </div>`)});
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplay}</div>`;
          
