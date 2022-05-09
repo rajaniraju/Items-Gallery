@@ -20,7 +20,7 @@ function changeImages() {
     let itemDisplayMarkup = getMarkup();
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
 }
-
+//the below funcion is called when page is loaded.
 async function getImage() {
     let response = await fetch(url);
     items = await response.json();
@@ -52,7 +52,7 @@ async function getImage() {
 function getMarkup() {
     let itemDisplayMarkup = currentItems.map((item) => {
         return (`<div class="mix col-sm-3 page1 page4 margin30">
-    <button id="modal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}')">
+    <button id="modal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}','${item.filename}','${item.filepath}','${item.imageSize}','${item.dimension}')">
     <div class="item-img-wrap ">
         <img src="${item.imageUrl}" height="250">
     </div> 
@@ -63,13 +63,27 @@ function getMarkup() {
     return itemDisplayMarkup;
 }
 
-function onImageClicked(url,imageType, imageSubType, imageSize) { 
+function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize,imagedimension) { 
     console.log(url);
     console.log(imageType);
     console.log(imageSubType);
+    console.log(imageSize);
+    let title = document.getElementById("exampleModalLabel")
+    title.innerHTML=`${imageSubType}`
     let img = document.getElementById("img-current");
     img.src = url;
-
+    let fileName=document.getElementById("img-filename");
+    let filePath= document.getElementById("img-filepath");
+    let imagetype= document.getElementById("img-type");
+    let imagesubtype= document.getElementById("img-subtype");
+    let imageDimension=document.getElementById("img-dimensions");
+    let imagesize = document.getElementById("img-size");
+    fileName.innerHTML = `${filename}`;
+    filePath.innerHTML = `${filepath}`;
+    imagetype.innerHTML = `${imageType}`;
+    imagesubtype.innerHTML = `${imageSubType}`;
+    //imageDimension.innerHTML = `${imagedimension}`;
+    imagesize.innerHTML = `${imageSize}`;
     const options = {};
     var myModal = new bootstrap.Modal(document.getElementById('imagemodal'), options);
     myModal.show();
