@@ -36,7 +36,7 @@ function buildPagination(currentPage) {
 function changeImages() {
     //getting the currently selected item.And change images accordingly.
     itemSelected = getValue();
-    let displayPagination = buildPagination(1);
+   
     let itemDisplayMarkup = getMarkup();
     
     document.getElementById("container").innerHTML = `<div id="grid" class="row">${itemDisplayMarkup}</div>`;
@@ -73,18 +73,24 @@ async function getImage() {
 }
 //to display the html contents
 function getMarkup() {
-    let itemDisplayMarkup = currentItems.map((item) => {
-        return (`<div class="mix col-sm-3 page1 page4 margin30">
-    <button id="modal" onclick="onImageClicked('${item.imageUrl}', '${item.imageType}', '${item.imageSubType}','${item.filename}','${item.filepath}','${item.imageSize}')">
+    let displayArray=[]
+    let display
+     for (let i=0; i<currentItems.length; i++) {
+    display =  `<div class="mix col-sm-3 page1 page4 margin30">
+    <button id="modal" onclick="onImageClicked('${currentItems[i].imageUrl}', '${currentItems[i].imageType}', '${currentItems[i].imageSubType}','${i.filename}','${currentItems[i].filepath}','${currentItems[i].imageSize}')">
     <div class="item-img-wrap ">
-        <img src="${item.imageUrl}" height="250">
+    <img src="${currentItems[i].imageUrl}" height="250">
     </div> 
     </button>
-    </div>
-    `)
-    });
-    
-    return itemDisplayMarkup;
+    </div>`
+    displayArray.push(display);
+
+    }
+     
+   
+    return displayArray;
+   
+   
     
 }
 
