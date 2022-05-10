@@ -21,6 +21,8 @@ function onFilterChanged() {
     updateFilteredItems();   
     currentStartIndex = 0;
     loadImageMarkup(currentStartIndex);
+
+    // TODO enable both buttons    
 }
 
 //the below funcion is called when page is loaded.
@@ -109,10 +111,21 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
 function onPreviousClicked() { 
     if (currentStartIndex >= 0) currentStartIndex--;    
     loadImageMarkup(currentStartIndex);
+    updateButtonState();
 }
 
 function onNextClicked() { 
     
     if (currentStartIndex < currentItems.length) currentStartIndex++;    
     loadImageMarkup(currentStartIndex);
+    updateButtonState();
+}
+
+function updateButtonState() { 
+    if (currentStartIndex <= 0) { }
+    // TODO disable prev button
+
+    
+    if (currentStartIndex >= currentItems.length) { }
+    // TODO disable nxt button
 }
