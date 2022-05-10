@@ -6,6 +6,7 @@ let subType = [];
 let uniqueSubtypes = [];
 
 
+
 function getValue() {
     //getting the currently selected item.
     selectedItem = document.getElementById("selection").value;
@@ -13,14 +14,32 @@ function getValue() {
     //put the selected items in new array.
     currentItems = items.filter(item => item.imageSubType === selectedItem);
     console.log(currentItems);
+    return currentItems;//is an array of selected items.
+}
+
+function buildPagination(currentPage) {
+    itemSelected = getValue();
+    let numberOfCurrentItems = itemSelected.length;
+    const numberPerPage = 2;
+     currentPage = 2;//todo change it
+    const numberOfPages = Math.ceil(numberOfCurrentItems / numberPerPage);
+    const start = (currentPage - 1) * numberPerPage;
+    const end = start + numberPerPage;
+    console.log(itemSelected.slice(start, end));
+    for (let i=0; i<numberOfPages; i++) {
+        document.getElementById('paginator').innerHTML = `<button class="btn btn-primary"
+        value="${i + 1}">${i + 1}</button>`;
+    }
+    
 }
 
 function changeImages() {
     //getting the currently selected item.And change images accordingly.
     itemSelected = getValue();
+    let displayPagination = buildPagination(1);
     let itemDisplayMarkup = getMarkup();
     
-    document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
+    document.getElementById("container").innerHTML = `<div id="grid" class="row">${itemDisplayMarkup}</div>`;
     
     
 }
