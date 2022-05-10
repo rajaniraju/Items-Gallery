@@ -171,6 +171,141 @@
 	"imageDimensions":"",
 	"imageSize":"416 kb",
 	"imageUrl":"./Images/Images/Animals/Iguanas/large.jpeg"
-}
+},
+{
+    "filename": "3-12-940x529.jpg",
+    "filepath": "Images/Buildings/Apartments/",
+    "imageType": "Buildings",
+    "imageSubType": "Apartments",
+    "imageDimensions": "",
+    "imageSize": "88kb",
+    "imageUrl": "./Images/Images/Buildings/Apartments/3-12-940x529.jpg"
+  },
+  {
+    "filename": "apartment.jpeg",
+    "filepath": "Images/Buildings/Apartments/",
+    "imageType": "Buildings",
+    "imageSubType": "Apartments",
+    "imageDimensions": "",
+    "imageSize": "295 kb",
+    "imageUrl": "./Images/Images/Buildings/Apartments/apartment.jpeg"
+  },
+  {
+    "filename": "logan_apartments.6.jpg",
+    "filepath": "Images/Buildings/Apartments/",
+    "imageType": "Buildings",
+    "imageSubType": "Apartments",
+    "imageDimensions": "",
+    "imageSize": "113 kb",
+    "imageUrl": "./Images/Images/Buildings/Apartments/logan_apartments.6.jpg"
+  },
+  {
+    "filename": "old-town-by-welcome-apartment.jpg",
+    "filepath": "Images/Buildings/Apartments/",
+    "imageType": "Buildings",
+    "imageSubType": "Apartments",
+    "imageDimensions": "",
+    "imageSize": "97 kb",
+    "imageUrl": "./Images/Images/Buildings/Apartments/old-town-by-welcome-apartment.jpg"
+  },
+  {
+    "filename": "pdetphotography-luxurylivingchicago-loganapts-1bdrm-2_7_2020-19.jpg",
+    "filepath": "Images/Buildings/Apartments/",
+    "imageType": "Buildings",
+    "imageSubType": "Apartments",
+    "imageDimensions": "",
+    "imageSize": "1318 kb",
+    "imageUrl": "./Images/Images/Buildings/Apartments/pdetphotography-luxurylivingchicago-loganapts-1bdrm-2_7_2020-19.jpg"
+  },
+  {
+    "filename": "1200px-Dubai_Marina_Skyline.jpg",
+    "filepath": "Images/Buildings/High Rises/",
+    "imageType": "Buildings",
+    "imageSubType": "High Rises",
+    "imageDimensions": "",
+    "imageSize": "334 kb",
+    "imageUrl": "./Images/Images/Buildings/High Rises/1200px-Dubai_Marina_Skyline.jpg"
+  },
+  {
+    "filename": "1836159499.jpg",
+    "filepath": "Images/Buildings/High Rises/",
+    "imageType": "Buildings",
+    "imageSubType": "High Rises",
+    "imageDimensions": "",
+    "imageSize": "470 kb",
+    "imageUrl": "./Images/Images/Buildings/High Rises/1836159499.jpg"
+  },
+  {
+    "filename": "empire-state-building.2e16d0ba.fill-685x343.format-jpeg.jpg",
+    "filepath": "Images/Buildings/High Rises/",
+    "imageType": "Buildings",
+    "imageSubType": "High Rises",
+    "imageDimensions": "",
+    "imageSize": "55 kb",
+    "imageUrl": "./Images/Images/Buildings/High Rises/empire-state-building.2e16d0ba.fill-685x343.format-jpeg.jpg"
+  },
+  {
+    "filename": "high-rise-glass-building.jpg",
+    "filepath": "Images/Buildings/High Rises/",
+    "imageType": "Buildings",
+    "imageSubType": "High Rises",
+    "imageDimensions": "",
+    "imageSize": "89 kb",
+    "imageUrl": "./Images/Images/Buildings/High Rises/high-rise-glass-building.jpg"
+  },
+  {
+    "filename": "Toranomon_Azabudai__Dusk_DBox.jpg",
+    "filepath": "Images/Buildings/High Rises/",
+    "imageType": "Buildings",
+    "imageSubType": "High Rises",
+    "imageDimensions": "",
+    "imageSize": "142 kb",
+    "imageUrl": "./Images/Images/Buildings/High Rises/Toranomon_Azabudai__Dusk_DBox.jpg"
+  },
+  {
+    "filename": "4cf6611d0067381374077112a67fe165.jpg",
+    "filepath": "Images/Buildings/Houses/",
+    "imageType": "Buildings",
+    "imageSubType": "Houses",
+    "imageDimensions": "",
+    "imageSize": "62 kb",
+    "imageUrl": "./Images/Images/Buildings/Houses/4cf6611d0067381374077112a67fe165.jpg"
+  },
+  {
+    "filename": "569b3e188a57bbe6f3f2ce6e1f95b1ce.jpg",
+    "filepath": "Images/Buildings/Houses/",
+    "imageType": "Buildings",
+    "imageSubType": "Houses",
+    "imageDimensions": "",
+    "imageSize": "49 kb",
+    "imageUrl": "./Images/Images/Buildings/Houses/569b3e188a57bbe6f3f2ce6e1f95b1ce.jpg"
+  },
+  {
+    "filename": "d39022cb8a7135e0d4dc11bca--lincoln-illinois.jpg",
+    "filepath": "Images/Buildings/Houses/",
+    "imageType": "Buildings",
+    "imageSubType": "Houses",
+    "imageDimensions": "",
+    "imageSize": "235 kb",
+    "imageUrl": "./Images/Images/Buildings/Houses/d39022cb8a7135e0d4dc11bca--lincoln-illinois.jpg"
+  },
+  {
+    "filename": "e3e412f71119c4a81e44f5d77aca4ed9.jpg",
+    "filepath": "Images/Buildings/Houses/",
+    "imageType": "Buildings",
+    "imageSubType": "Houses",
+    "imageDimensions": "",
+    "imageSize": "115 kb",
+    "imageUrl": "./Images/Images/Buildings/Houses/e3e412f71119c4a81e44f5d77aca4ed9.jpg"
+  },
+  {
+    "filename": "l26495344-m1xd-w1020_h770_q80.jpg",
+    "filepath": "Images/Buildings/Houses/",
+    "imageType": "Buildings",
+    "imageSubType": "Houses",
+    "imageDimensions": "",
+    "imageSize": "109 kb",
+    "imageUrl": "./Images/Images/Buildings/Houses/l26495344-m1xd-w1020_h770_q80.jpg"
+  }
 
 ]
