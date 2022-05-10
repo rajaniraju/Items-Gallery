@@ -21,10 +21,10 @@
     <div class="col-md-8 offset-md-2">
     <div class="select">
         <div class="col-md-8 offset-md-2">
-            <div class="container-">
+            <div class="container">
             <div class="dropdown">
             <select title="dropdown" id="selection" onchange="onFilterChanged()" class="form-select">
-                <option >Cat</option>
+                <option >Cats</option>
             </select>
         </div> 
           </div>
@@ -37,9 +37,9 @@
     <div  id="paginator">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li id="previous" class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li id="previous" class="page-item"><a class="page-link"onclick="onPreviousClicked()" href="#">Previous</a></li>
               
-              <li id="next" class="page-item"><a class="page-link" href="#">Next</a></li>
+              <li id="next" class="page-item"><a class="page-link"onclick="onNextClicked()" href="#">Next</a></li>
             </ul>
           </nav>
     </div>   

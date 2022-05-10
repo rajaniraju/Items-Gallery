@@ -40,7 +40,7 @@ async function onPageLoad() {
         let unique = [...new Set(subType)];
         uniqueSubtypes = unique
     }
-    //console.log(uniqueSubtypes);
+
 
     //getting uniqueSubtype in selection dropdown.
     let selectionDisplay = uniqueSubtypes.map((subtype) => {
@@ -52,7 +52,7 @@ async function onPageLoad() {
 
     //displaying images accordingly 
     itemSelected = getValue();
-    let itemDisplayMarkup = getMarkup(0); // Always start with the first item.
+    let itemDisplayMarkup = getMarkup(0); 
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
     
 }
@@ -76,6 +76,11 @@ function getMarkup(startIndex) {
     }     
    
     return displayArray;
+}
+
+function loadImageMarkup(startIndex) { 
+    let itemDisplayMarkup = getMarkup(startIndex); 
+    document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
 }
 
 
@@ -107,11 +112,19 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
 }
 
 function onPreviousClicked() { 
-    // curentIndex--
-    // currentItems.len
-    // getMarkup()
+    
+    currentStartIndex = 0;
+    loadImageMarkup(currentStartIndex);  
+   
+     console.log(currentItems.length)
+    
 }
 
 function onNextClicked() { 
+    
+    currentStartIndex = 0
+    
+    loadImageMarkup(currentStartIndex);
+    // getMarkup() 
 
 }
