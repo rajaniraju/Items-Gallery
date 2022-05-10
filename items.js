@@ -4,8 +4,8 @@ let url = './items.json';
 let currentItems = [];
 let subType = [];
 let uniqueSubtypes = [];
-
-
+const MAX_ITEMS = 3;
+let currentStartIndex = 0;
 
 function getValue() {
     //getting the currently selected item.
@@ -29,22 +29,20 @@ function buildPagination(currentPage) {
     for (let i=0; i<numberOfPages; i++) {
         document.getElementById('paginator').innerHTML = `<button class="btn btn-primary"
         value="${i + 1}">${i + 1}</button>`;
-    }
-    
+    }    
 }
 
-function changeImages() {
+function onFilterChanged() {
     //getting the currently selected item.And change images accordingly.
-    itemSelected = getValue();
-   
-    let itemDisplayMarkup = getMarkup();
+    itemSelected = getValue();   
+    let itemDisplayMarkup = getMarkup(0); // Start with the first item on filter changed.
     
     document.getElementById("container").innerHTML = `<div id="grid" class="row">${itemDisplayMarkup}</div>`;
     
     
 }
 //the below funcion is called when page is loaded.
-async function getImage() {
+async function onPageLoad() {
     let response = await fetch(url);
     items = await response.json();
     console.log(items);
@@ -55,7 +53,7 @@ async function getImage() {
         let unique = [...new Set(subType)];
         uniqueSubtypes = unique
     }
-    console.log(uniqueSubtypes);
+    //console.log(uniqueSubtypes);
 
     //getting uniqueSubtype in selection dropdown.
     let selectionDisplay = uniqueSubtypes.map((subtype) => {
@@ -67,34 +65,31 @@ async function getImage() {
 
     //displaying images accordingly 
     itemSelected = getValue();
-    let itemDisplayMarkup = getMarkup();
+    let itemDisplayMarkup = getMarkup(0); // Always start with the first item.
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
     
 }
 //to display the html contents
-function getMarkup() {
+function getMarkup(startIndex) {
     let displayArray=[]
-    let display
-     for (let i=0; i<currentItems.length; i++) {
-    display =  `<div class="mix col-sm-3 page1 page4 margin30">
-    <button id="modal" onclick="onImageClicked('${currentItems[i].imageUrl}', '${currentItems[i].imageType}', '${currentItems[i].imageSubType}','${currentItems[i].filename}','${currentItems[i].filepath}','${currentItems[i].imageSize}')">
-    <div class="item-img-wrap ">
-    <img src="${currentItems[i].imageUrl}" height="250">
-    </div> 
-    </button>
-    </div>`
-    displayArray.push(display);
+    let display;
+    let lastIndex = startIndex + MAX_ITEMS;    
+    let loopMax = currentItems.length < lastIndex ? currentItems.length : lastIndex;
+    console.log("currentItems.length:", currentItems.length, "lastIndex:", lastIndex, "loopMax:", loopMax);
 
-    }
-     
+    for (let i = startIndex; i < loopMax; i++) {
+        display =  `<div class="mix col-sm-3 page1 page4 margin30">
+        <button id="modal" onclick="onImageClicked('${currentItems[i].imageUrl}', '${currentItems[i].imageType}', '${currentItems[i].imageSubType}','${currentItems[i].filename}','${currentItems[i].filepath}','${currentItems[i].imageSize}')">
+        <div class="item-img-wrap ">
+        <img src="${currentItems[i].imageUrl}" height="250">
+        </div> 
+        </button>
+        </div>`
+        displayArray.push(display);
+    }     
    
     return displayArray;
-   
-   
-    
 }
-
-
 
 
 //to display the model when image is clicked
@@ -122,4 +117,14 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
     const options = {};
     var myModal = new bootstrap.Modal(document.getElementById('imagemodal'), options);
     myModal.show();
+}
+
+function onPreviousClicked() { 
+    // curentIndex--
+    // currentItems.len
+    // getMarkup()
+}
+
+function onNextClicked() { 
+
 }
