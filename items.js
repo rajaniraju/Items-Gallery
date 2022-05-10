@@ -7,27 +7,22 @@ let uniqueSubtypes = [];
 const MAX_ITEMS = 3;
 let currentStartIndex = 0;
 
-function getValue() {
+function updateFilteredItems() {
     //getting the currently selected item.
     selectedItem = document.getElementById("selection").value;
     console.log(selectedItem);
     //put the selected items in new array.
     currentItems = items.filter(item => item.imageSubType === selectedItem);
-    console.log(currentItems);
-    return currentItems;//is an array of selected items.
+    console.log(currentItems);    
 }
-
-
 
 function onFilterChanged() {
     //getting the currently selected item.And change images accordingly.
-    itemSelected = getValue();   
-    let itemDisplayMarkup = getMarkup(0); // Start with the first item on filter changed.
-    
-    document.getElementById("container").innerHTML = `<div id="grid" class="row">${itemDisplayMarkup}</div>`;
-    
-    
+    updateFilteredItems();   
+    currentStartIndex = 0;
+    loadImageMarkup(currentStartIndex);
 }
+
 //the below funcion is called when page is loaded.
 async function onPageLoad() {
     let response = await fetch(url);
@@ -51,7 +46,7 @@ async function onPageLoad() {
     document.getElementById("selection").innerHTML = selectionDisplay;
 
     //displaying images accordingly 
-    itemSelected = getValue();
+    itemSelected = updateFilteredItems();
     let itemDisplayMarkup = getMarkup(0); 
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
     
@@ -62,7 +57,7 @@ function getMarkup(startIndex) {
     let display;
     let lastIndex = startIndex + MAX_ITEMS;    
     let loopMax = currentItems.length < lastIndex ? currentItems.length : lastIndex;
-    console.log("currentItems.length:", currentItems.length, "lastIndex:", lastIndex, "loopMax:", loopMax);
+    console.log("startIndex:", startIndex, "lastIndex:", lastIndex, "loopMax:", loopMax);
 
     for (let i = startIndex; i < loopMax; i++) {
         display =  `<div class="mix col-sm-3 page1 page4 margin30">
@@ -112,19 +107,12 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
 }
 
 function onPreviousClicked() { 
-    
-    currentStartIndex = 0;
-    loadImageMarkup(currentStartIndex);  
-   
-     console.log(currentItems.length)
-    
+    if (currentStartIndex >= 0) currentStartIndex--;    
+    loadImageMarkup(currentStartIndex);
 }
 
 function onNextClicked() { 
     
-    currentStartIndex = 0
-    
+    if (currentStartIndex < currentItems.length) currentStartIndex++;    
     loadImageMarkup(currentStartIndex);
-    // getMarkup() 
-
 }
