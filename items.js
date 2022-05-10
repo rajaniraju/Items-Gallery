@@ -77,7 +77,7 @@ function getMarkup() {
     let display
      for (let i=0; i<currentItems.length; i++) {
     display =  `<div class="mix col-sm-3 page1 page4 margin30">
-    <button id="modal" onclick="onImageClicked('${currentItems[i].imageUrl}', '${currentItems[i].imageType}', '${currentItems[i].imageSubType}','${i.filename}','${currentItems[i].filepath}','${currentItems[i].imageSize}')">
+    <button id="modal" onclick="onImageClicked('${currentItems[i].imageUrl}', '${currentItems[i].imageType}', '${currentItems[i].imageSubType}','${currentItems[i].filename}','${currentItems[i].filepath}','${currentItems[i].imageSize}')">
     <div class="item-img-wrap ">
     <img src="${currentItems[i].imageUrl}" height="250">
     </div> 

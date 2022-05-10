@@ -47,24 +47,25 @@
     </div>   
 
     <!-- Modal -->
-    <div class="modal fade" id="imagemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal fade " id="imagemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content ">
             <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img id="img-current" src="#" height="300">
+                <img id="img-current" src="#" height="600" >
+                <ul>
+                    <li class="properties">File Name<p id="img-filename"></li>  
+                    <li class="properties">File Path<p id="img-filepath"></li> 
+                    <li class="properties">Image Type<p id="img-type"></p></li>
+                    <li class="properties">Image SubType <p id="img-subtype"></p></li>
+                    <li class="properties">Image Size  <p id="img-size"></p></li>
+                    </ul>
             </div>
             <div class="modal-footer" >
-            <ul>
-            <li>File Name<p id="img-filename"></p></li>  
-            <li>File Path<p id="img-filepath"></p></li> 
-            <li>Image Type<p id="img-type"></p></li>
-            <li>Image SubType <p id="img-subtype"></p></li>
-            <li>Image Size  <p id="img-size"></p></li>
-            </ul>
+            
             </div>
         </div>
         </div>
