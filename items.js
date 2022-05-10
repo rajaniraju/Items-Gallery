@@ -17,20 +17,7 @@ function getValue() {
     return currentItems;//is an array of selected items.
 }
 
-function buildPagination(currentPage) {
-    itemSelected = getValue();
-    let numberOfCurrentItems = itemSelected.length;
-    const numberPerPage = 2;
-     currentPage = 2;//todo change it
-    const numberOfPages = Math.ceil(numberOfCurrentItems / numberPerPage);
-    const start = (currentPage - 1) * numberPerPage;
-    const end = start + numberPerPage;
-    console.log(itemSelected.slice(start, end));
-    for (let i=0; i<numberOfPages; i++) {
-        document.getElementById('paginator').innerHTML = `<button class="btn btn-primary"
-        value="${i + 1}">${i + 1}</button>`;
-    }    
-}
+
 
 function onFilterChanged() {
     //getting the currently selected item.And change images accordingly.
