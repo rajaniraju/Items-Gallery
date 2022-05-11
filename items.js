@@ -4,7 +4,7 @@ let url = './items.json';
 let currentItems = [];//
 let subType = [];//filtered array after filtering sub type.
 const MAX_ITEMS = 3;//number of images displaying per page.
-let currentStartIndex = 0;
+let currentStartIndex = 0;//index of first picture when you click next or previous button or when page loads or when selecting subtypes.
 
 //getting the currently selected sub type.
 function updateFilteredItems() {
@@ -12,7 +12,7 @@ function updateFilteredItems() {
     selectedItem = document.getElementById("selection").value;
   
   
-//since items contains all json data currentItems here is items.
+// items contains all json data.
     if (selectedItem == "All") {
         currentItems = items;    
     }
