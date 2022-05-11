@@ -1,42 +1,39 @@
-let items;
-let selectedItem;
+let items;//json data through fetch call.
+let selectedItem;//current subtype selection.
 let url = './items.json';
-let currentItems = [];
-let subType = [];
-let uniqueSubtypes = [];
-const MAX_ITEMS = 3;
+let currentItems = [];//
+let subType = [];//filtered array after filtering sub type.
+const MAX_ITEMS = 3;//number of images displaying per page.
 let currentStartIndex = 0;
 
+//getting the currently selected sub type.
 function updateFilteredItems() {
-    //getting the currently selected item.
+    
     selectedItem = document.getElementById("selection").value;
-    console.log(selectedItem);
-    //put the selected items in new array.
-
+  
+  
+//since items contains all json data currentItems here is items.
     if (selectedItem == "All") {
         currentItems = items;    
     }
-    else {
+    else {//here currentItems is filtered data
         currentItems = items.filter(item => item.imageSubType === selectedItem);    
     }
     
     console.log(currentItems);    
 }
-
+//function to get the currently selected item.And change images accordingly.
 function onFilterChanged() {
-    //getting the currently selected item.And change images accordingly.
     updateFilteredItems();   
     currentStartIndex = 0;
     loadImageMarkup(currentStartIndex);
-
-    // TODO enable both buttons    
 }
 
-//the below funcion is called when page is loaded.
+//this funcion is called when page is loaded.
 async function onPageLoad() {
     let response = await fetch(url);
     items = await response.json();
-    console.log(items);
+    
     subType.push("All");
 
     for (i = 0; i < items.length; i++) {
@@ -47,23 +44,18 @@ async function onPageLoad() {
 
     //inorder to get unique elements in the array.
     let unique = [...new Set(subType)];
-    uniqueSubtypes = unique;    
-
+       
     //getting uniqueSubtype in selection dropdown.
-    let selectionDisplay = uniqueSubtypes.map((subtype) => {
-        return (` 
-        
-    <option>${subtype}</option>
-    `)
+    let selectionDisplay = unique.map((subtype) => {
+        return (`<option>${subtype}</option>`)
     })
     document.getElementById("selection").innerHTML = selectionDisplay;
-
-    //displaying images accordingly 
     itemSelected = updateFilteredItems();
     let itemDisplayMarkup = getMarkup(0); 
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;    
 }
-//to display the html contents
+
+//to get the html for loading images.
 function getMarkup(startIndex) {
     let displayArray=[]
     let display;
@@ -84,7 +76,7 @@ function getMarkup(startIndex) {
    
     return displayArray;
 }
-
+//to load images in the page.
 function loadImageMarkup(startIndex) { 
     let itemDisplayMarkup = getMarkup(startIndex); 
     document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
@@ -92,11 +84,8 @@ function loadImageMarkup(startIndex) {
 
 
 //to display the model when image is clicked
-function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize) { 
-    console.log(url);
-    console.log(imageType);
-    console.log(imageSubType);
-    console.log(imageSize);
+function onImageClicked(url, imageType, imageSubType, filename, filepath, imageSize) { 
+    //todo pass everything as object
     let title = document.getElementById("exampleModalLabel")
     title.innerHTML=`${imageSubType}`
     let img = document.getElementById("img-current");
@@ -105,28 +94,26 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
     let filePath= document.getElementById("img-filepath");
     let imagetype= document.getElementById("img-type");
     let imagesubtype= document.getElementById("img-subtype");
-    //let imageDimension=document.getElementById("img-dimensions");
     let imagesize = document.getElementById("img-size");
     fileName.innerHTML = `${filename}`;
     filePath.innerHTML = `${filepath}`;
     imagetype.innerHTML = `${imageType}`;
     imagesubtype.innerHTML = `${imageSubType}`;
-    //imageDimension.innerHTML = `${imagedimension}`;
     imagesize.innerHTML = `${imageSize}`;
     const options = {};
     var myModal = new bootstrap.Modal(document.getElementById('imagemodal'), options);
     myModal.show();
 }
-
+//functionality when previous is clicked.
 function onPreviousClicked() { 
     if (currentStartIndex > 0) {
         currentStartIndex--;
         loadImageMarkup(currentStartIndex);
     } 
     
-    //updateButtonState();
+   
 }
-
+//functionality when next is clicked.
 function onNextClicked() { 
     
     if (currentStartIndex < currentItems.length) {
@@ -134,9 +121,9 @@ function onNextClicked() {
         loadImageMarkup(currentStartIndex);
     }
     
-    //updateButtonState();
+    
 }
-
+// To disable previous and next buttons whenever necessary.
 function updateButtonState() { 
     if (currentStartIndex <= 0) {
         document.getElementById('btnPrevious').disabled = true;
