@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>list of Image</title>
+    <title>Image Gallery</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="items.js"></script>
     <link rel="stylesheet" href="./items.css">
@@ -12,20 +12,22 @@
 </head>
 <body onload="onPageLoad()">
     <!-- navbar -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand"><h1>Gallery</h1></a>
+          <a class="navbar-brand"><h1 class="heading">Image Gallery</h1></a>
              
         </div>
       </nav>
     <hr>
+    
     <div class="col-md-8 offset-md-2">
-    <div class="select">
-        <div class="col-md-8 offset-md-2">
-            <div class="container">
-            <div class="dropdown">
+        <div class="select">
+            <div class="col-md-8 offset-md-2">
+                <div class="container">
+                <div class="dropdown">
+              <h6>Select sub type to get relevant images or All for all images</h6>  
+              <br>
             <select title="dropdown" id="selection" onchange="onFilterChanged()" class="form-select">
-                <option >All</option>
             </select>
         </div> 
           </div>

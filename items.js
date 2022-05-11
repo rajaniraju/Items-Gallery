@@ -119,24 +119,30 @@ function onImageClicked(url,imageType, imageSubType,filename,filepath, imageSize
 }
 
 function onPreviousClicked() { 
-    if (currentStartIndex >= 0) currentStartIndex--;    
-    loadImageMarkup(currentStartIndex);
-    updateButtonState();
+    if (currentStartIndex > 0) {
+        currentStartIndex--;
+        loadImageMarkup(currentStartIndex);
+    } 
+    
+    //updateButtonState();
 }
 
 function onNextClicked() { 
     
-    if (currentStartIndex < currentItems.length) currentStartIndex++;    
-    loadImageMarkup(currentStartIndex);
-    updateButtonState();
+    if (currentStartIndex < currentItems.length) {
+        currentStartIndex++;
+        loadImageMarkup(currentStartIndex);
+    }
+    
+    //updateButtonState();
 }
 
 function updateButtonState() { 
-    // if (currentStartIndex <= 0) {
-    //     document.getElementById('btnPrevious').disabled = true;
-    // }
+    if (currentStartIndex <= 0) {
+        document.getElementById('btnPrevious').disabled = true;
+    }
     
-    // if (currentStartIndex >= currentItems.length) {
-    //     document.getElementById('btnNext').disabled = true;
-    // }
+    if (currentStartIndex >= currentItems.length) {
+        document.getElementById('btnNext').disabled = true;
+    }
 }
