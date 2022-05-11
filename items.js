@@ -12,7 +12,14 @@ function updateFilteredItems() {
     selectedItem = document.getElementById("selection").value;
     console.log(selectedItem);
     //put the selected items in new array.
-    currentItems = items.filter(item => item.imageSubType === selectedItem);
+
+    if (selectedItem == "All") {
+        currentItems = items;    
+    }
+    else {
+        currentItems = items.filter(item => item.imageSubType === selectedItem);    
+    }
+    
     console.log(currentItems);    
 }
 
@@ -30,18 +37,22 @@ async function onPageLoad() {
     let response = await fetch(url);
     items = await response.json();
     console.log(items);
+    subType.push("All");
+
     for (i = 0; i < items.length; i++) {
         let imageSubType = items[i].imageSubType;
+        
         subType.push(imageSubType);
-        //inorder to get unique elements in the array.
-        let unique = [...new Set(subType)];
-        uniqueSubtypes = unique
-    }
+    }    
 
+    //inorder to get unique elements in the array.
+    let unique = [...new Set(subType)];
+    uniqueSubtypes = unique;    
 
     //getting uniqueSubtype in selection dropdown.
     let selectionDisplay = uniqueSubtypes.map((subtype) => {
         return (` 
+        
     <option>${subtype}</option>
     `)
     })
@@ -50,8 +61,7 @@ async function onPageLoad() {
     //displaying images accordingly 
     itemSelected = updateFilteredItems();
     let itemDisplayMarkup = getMarkup(0); 
-    document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;
-    
+    document.getElementById("container").innerHTML = ` <div id="grid" class="row">${itemDisplayMarkup}</div>`;    
 }
 //to display the html contents
 function getMarkup(startIndex) {
@@ -122,10 +132,11 @@ function onNextClicked() {
 }
 
 function updateButtonState() { 
-    if (currentStartIndex <= 0) { }
-    // TODO disable prev button
-
+    // if (currentStartIndex <= 0) {
+    //     document.getElementById('btnPrevious').disabled = true;
+    // }
     
-    if (currentStartIndex >= currentItems.length) { }
-    // TODO disable nxt button
+    // if (currentStartIndex >= currentItems.length) {
+    //     document.getElementById('btnNext').disabled = true;
+    // }
 }
