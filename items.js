@@ -20,8 +20,7 @@ function updateFilteredItems() {
         currentItems = items.filter(item => item.imageSubType === selectedItem);    
     }
     
-    console.log(currentItems);    
-}
+       }
 //function to get the currently selected item.And change images accordingly.
 function onFilterChanged() {
     updateFilteredItems();   
